@@ -67,7 +67,6 @@ module.exports = function exports (grunt, _spawn) {
     var env           = _.merge(process.env, localOtherOptionsStringified);
 
     // pick a way to split up the work
-    console.log('===> filesSrc : ' + filesSrc);
     console.log('===> limit : ' + limit);
     console.log('===> parallelType : ' + parallelType);
     if (parallelType === 'directory') {   // async by directory
