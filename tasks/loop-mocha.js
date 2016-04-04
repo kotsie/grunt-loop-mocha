@@ -141,15 +141,17 @@ module.exports = function (grunt) {
         });
         return results;
       }, {});
-      if (iterationError) {
+            if (iterationError) {
+        let msg = "[grunt-loop-mocha] error, please check erroneous iteration(s): \n" + JSON.stringify(iterationResults, null, 4) + "\n"
         if (noFail === true) {
-          console.log("[grunt-loop-mocha] error, please check erroneous iteration(s): \n" + JSON.stringify(iterationResults, null, 4) + "\n");
+          console.log(msg);
           done();
         }
         else {
-          console.log("[grunt-loop-mocha] error, please check erroneous iteration(s): \n" + JSON.stringify(iterationResults, null, 4) + "\n");
+          console.log(msg);
           done(new Error(msg));
         }
+
       } else {
           console.log("[grunt-loop-mocha] status on iteration(s): \n" + JSON.stringify(iterationResults, null, 4) + "\n");
           done();
